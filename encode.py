@@ -251,8 +251,10 @@ def main() -> None:
     application.add_handler(CommandHandler("webseries_json", webseries_json_command))
     application.add_handler(CommandHandler("search_data", search_data_command))
 
-    # Start the bot
-    application.run_polling()
+    # Start the bot with webhook
+    port = int(os.getenv('PORT', 8000))
+    webhook_url = f"https://gay-bettina-harshorgnew-69b7604e.koyeb.app/{BOT_TOKEN}"  # Replace with your actual domain
+    application.run_webhook(listen="0.0.0.0", port=port, url_path=BOT_TOKEN, webhook_url=webhook_url)
 
 if __name__ == '__main__':
     main()
