@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 # Prefix for encoded links
 CC_LINK_PREFIX = "cclink"
-BOT_TOKEN = '7655559636:AAHiU-jPi0OffoZgKGE3CWU6Di9WYVNOb6k'
+BOT_TOKEN =os.getenv('BOT_TOKEN')
 JSON_FILE_PATH = 'movie_links.txt'  # Path to the JSON file
 
 # Function to encode text
